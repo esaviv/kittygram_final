@@ -15,6 +15,7 @@ services:
     image: esaviv/kittygram_backend
     env_file: .env
     volumes:
+      - static:/backend_static
       - media:/media
   frontend:
     env_file: .env
