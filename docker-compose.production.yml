@@ -3,6 +3,7 @@ version: '3'
 volumes:
   pg_data:
   static:
+  media:
 
 services:
   db:
@@ -12,6 +13,8 @@ services:
   backend:
     image: esaviv/kittygram_backend
     env_file: .env
+    volumes:
+      - media:/media
   frontend:
     env_file: .env
     image: esaviv/kittygram_frontend
@@ -25,3 +28,4 @@ services:
       - 9000:80
     volumes:
       - static:/static
+      - media:/media
